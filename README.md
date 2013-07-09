@@ -10,16 +10,30 @@ Dependencies:
 Usage:
 -------------
 
-'''javascript
+In this short sample, we calling foo and bar, inside the variable called 'context':
 
-	var domElem = $("#myDiv");
+**HTML:**
+
+	<div id="myDiv">
+		<input type="text" onkeypress="bar()"></input>
+		<span onclick="foo('yeah')">ClickMe</span>
+	</div>
+
+
+**JavaScript:**
+
+	var domElem = $('#myDiv');
+
 	var context = {
-		foo:function(){
-			alert('foo');
+		foo:function(val){
+			alert(val);
+		},
+		bar:function(){
+			console.log('keyPressed');
 		}
 	};
 
-	EventBinder(domElem),context);	
-'''
+	EventBinder(domElem,context);	
+
 
 
